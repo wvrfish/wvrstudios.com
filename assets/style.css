@@ -125,6 +125,7 @@ section h2 { font-size: 26px; margin: 0 0 14px; }
 .features li { display: flex; gap: 12px; align-items: baseline; }
 .features li::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 3px; background: var(--accent); transform: translateY(-1px); }
 
+.app-list { display: grid; gap: 14px; }
 .app-card { display: flex; gap: 20px; align-items: center; text-decoration: none; color: inherit; }
 .app-card img { width: 88px; height: 88px; border-radius: 20px; flex: none; }
 .app-card h3 { margin: 0; font-size: 28px; }
@@ -152,4 +153,49 @@ footer.site a { color: var(--muted); }
   .games { grid-template-columns: repeat(2, 1fr); }
   .hero h1 { font-size: 42px; }
   header.site nav a { margin-left: 12px; }
+}
+
+/* wanderfell: widget renders, cropped to the card with its corners cut by css */
+.widgets {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.widgets figure, .split figure { margin: 0; }
+.widgets img, .split img { display: block; width: 100%; height: auto; }
+.widgets img { border-radius: 5% / 10.5%; }
+.widgets figcaption, .split figcaption { margin-top: 6px; color: var(--muted); font-size: 14px; text-align: center; }
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 28px;
+  align-items: center;
+}
+
+.split img { border-radius: 5%; }
+
+.looks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  text-align: center;
+}
+
+.looks img { width: 88px; height: 88px; border-radius: 20px; }
+.looks h3 { margin: 6px 0 0; font-size: 17px; }
+.looks p { margin: 0; color: var(--muted); font-size: 14px; }
+
+.app-heading { display: flex; align-items: center; gap: 12px; margin-top: 44px; font-size: 26px; }
+.app-heading img { width: 44px; height: 44px; border-radius: 10px; }
+.app-heading + h2 { margin-top: 18px; }
+
+.press-downloads { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+
+@media (max-width: 620px) {
+  .widgets { grid-template-columns: 1fr; }
+  .split { grid-template-columns: 1fr; }
+  .split figure { max-width: 320px; margin: 0 auto; }
+  .looks { grid-template-columns: repeat(2, 1fr); row-gap: 20px; }
 }
